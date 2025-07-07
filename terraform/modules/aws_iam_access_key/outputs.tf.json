@@ -1,0 +1,14 @@
+{
+  "output": {
+    "id": {
+      "description": "Access key ID.",
+      "sensitive": true,
+      "value": "${aws_iam_access_key.this.id}"
+    },
+    "secret": {
+      "description": "Secret access key.",
+      "sensitive": true,
+      "value": "${aws_iam_access_key.this.secret}"
+    }
+  }
+}

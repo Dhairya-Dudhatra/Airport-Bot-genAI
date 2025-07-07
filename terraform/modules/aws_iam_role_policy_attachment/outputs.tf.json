@@ -1,0 +1,9 @@
+{
+  "output": {
+    "arn": {
+      "description": "The value of the arn output",
+      "sensitive": false,
+      "value": "${aws_iam_role_policy_attachment.this.policy_arn}"
+    }
+  }
+}

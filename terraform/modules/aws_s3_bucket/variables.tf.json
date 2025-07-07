@@ -1,0 +1,36 @@
+{
+    "variable": {
+        "bucket": [
+            {
+                "default": "",
+                "description": "The name of the S3 bucket",
+                "type": "string",
+                "nullable": true
+            }
+        ],
+        "force_destroy": [
+            {
+                "default": false,
+                "description": "Indicates all objects should be deleted from the bucket so that the bucket can be destroyed without error. These objects are not recoverable.",
+                "type": "bool",
+                "nullable": true
+            }
+        ],
+        "object_lock_enabled": [
+            {
+                "default": false,
+                "description": "Enable object locking for this bucket. Object lock allows you to store objects using a write once, read many (WORM) model.",
+                "type": "bool",
+                "nullable": true
+            }
+        ],
+        "tags": [
+            {
+                "default": {},
+                "description": "A mapping of AWS tags to assign to the bucket.",
+                "type": "map(string)",
+                "nullable": true
+            }
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "variable": {
+        "vpc_id": [
+            {
+                "default": "",
+                "description": "VPC ID",
+                "type": "string",
+                "nullable": false
+            }
+        ],
+        "route": [
+            {
+                "default": [],
+                "description": "A list of route objects",
+                "type": "list(object({ cidr_block: string, ipv6_cidr_block: string, destination_prefix_list_id: string, carrier_gateway_id: string, core_network_arn: string, egress_only_gateway_id: string, gateway_id: string, local_gateway_id: string, nat_gateway_id: string, network_interface_id: string, transit_gateway_id: string, vpc_endpoint_id: string, vpc_peering_connection_id: string}))",
+                "nullable": true
+            }
+        ],
+        "tags": [
+            {
+                "default": {},
+                "description": "A mapping of tags to assign to the resource",
+                "type": "map(string)",
+                "nullable": true
+            }
+        ]
+    }
+}

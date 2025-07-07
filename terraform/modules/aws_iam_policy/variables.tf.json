@@ -1,0 +1,40 @@
+{
+    "variable": {
+        "description": [
+            {
+                "description": "Description of the IAM policy",
+                "nullable": true,
+                "type": "string"
+            }
+        ],
+        "name": [
+            {
+                "description": "Name of the Role Policy",
+                "type": "string",
+                "nullable": true
+            }
+        ],
+        "path": [
+            {
+                "default": "/",
+                "description": "The path to the role policy",
+                "type": "string",
+                "nullable": true
+            }
+        ],
+        "policy": [
+            {
+                "description": "JSON formatted inline policy document",
+                "type": "string",
+                "nullable": false
+            }
+        ],
+        "tags": [
+            {
+                "description": "A mapping of tags to assign to the policy",
+                "nullable": true,
+                "type": "map(string)"
+            }
+        ]
+    }
+}

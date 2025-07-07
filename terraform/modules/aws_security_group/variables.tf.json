@@ -1,0 +1,65 @@
+{
+    "variable": {
+        "name": [
+            {
+                "description": "Name of the security group. If omitted, Terraform will assign a random, unique name.",
+                "nullable": true,
+                "type": "string"
+            }
+        ],
+        "description": [
+            {
+                "description": "Security group description.",
+                "default": "Managed by Terraform.",
+                "type": "string",
+                "nullable": true
+            }
+        ],
+        "vpc_id": [
+            {
+                "description": "VPC ID",
+                "nullable": true,
+                "type": "string"
+            }
+        ],
+        "egress": [
+            {
+                "description": "Configuration block for egress rules. Can be specified multiple times for each egress rule.",
+                "type": "list(object({ from_port: number, to_port: number, cidr_blocks: list(string), description: string, ipv6_cidr_blocks: list(string), prefix_list_ids: optional(list(string)), protocol: string, security_groups: list(string), self: bool}))",
+                "default": [],
+                "nullable": true
+            }
+        ],
+        "ingress": [
+            {
+                "description": "Configuration block for ingress rules. Can be specified multiple times for each ingress rule.",
+                "type": "list(object({ from_port: number, to_port: number, protocol: string, cidr_blocks: list(string), description: string, ipv6_cidr_blocks: list(string), prefix_list_ids: optional(list(string)), security_groups: list(string), self: bool}))",
+                "default": [],
+                "nullable": true
+            }
+        ],
+        "revoke_rules_on_delete": [
+            {
+                "description": "Whether to revoke all rules in the security group when the security group is deleted.",
+                "type": "bool",
+                "nullable": true,
+                "default": false
+            }
+        ],
+        "tags": [
+            {
+                "description": "A map of tags to add to the resource",
+                "type": "map(string)",
+                "nullable": true,
+                "default": {}
+            }
+        ],
+        "timeouts": [
+            {
+                "description": "Timeout for the security group",
+                "type": "object({ create: optional(string), delete: optional(string)})",
+                "nullable": true
+            }
+        ]
+    }
+}

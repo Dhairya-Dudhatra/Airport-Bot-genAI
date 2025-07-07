@@ -1,0 +1,141 @@
+{
+    "variable": {
+        "aliases": [
+            {
+                "description": "Extra CNAMEs (alternate domain names), if any, for this distribution.",
+                "nullable": true,
+                "type": "list(string)"
+            }
+        ],
+        "comment": [
+            {
+                "description": "Any comments you want to include about the distribution.",
+                "nullable": true,
+                "type": "string"
+            }
+        ],
+        "continuous_deployment_policy_id": [
+            {
+                "description": "Identifier of a continuous deployment policy.",
+                "nullable": true,
+                "type": "string"
+            }
+        ],
+        "wait_for_deployment": [
+            {
+                "description": "Whether to wait for the distribution to be deployed before returning.",
+                "nullable": true,
+                "type": "bool",
+                "default": true
+            }
+        ],
+        "custom_error_response": [
+            {
+                "description": "A list of custom error responses that are associated with this distribution.",
+                "type": "list(object({error_caching_min_ttl:number,error_code :number,response_code :number,response_page_path:string  }))",
+                "nullable": true
+            }
+        ],
+        "default_cache_behavior": [
+            {
+                "description": "A list of cache behaviors that are associated with this distribution.",
+                "nullable": false,
+                "type": "list(object({allowed_methods:list(string),cached_methods:list(string),cache_policy_id: string,compress:bool,default_ttl:number,field_level_encryption_id:string,min_ttl:number,max_ttl:number,smooth_streaming:bool,target_origin_id:string,trusted_signers:list(string),viewer_protocol_policy:string,origin_request_policy_id:string,realtime_log_config_arn:string,response_headers_policy_id:string,trusted_key_groups:list(string),forwarded_values: list(object({cookies: list(object({forward:string,whitelisted_names:list(string)})),headers:list(string),query_string:bool,query_string_cache_keys:list(string)})), lambda_function_association:list(object({event_type:string,lambda_arn:string,include_body:bool})),function_association:list(object({event_type:string,function_arn:string})),grpc_config:optional(list(object({enabled:bool})))}))"
+            }
+        ],
+        "default_root_object": [
+            {
+                "description": "The object that you want CloudFront to return (for example, index.html) when an end user requests the root URL.",
+                "nullable": true,
+                "type": "string"
+            }
+        ],
+        "enabled": [
+            {
+                "description": "Whether the distribution is enabled to accept end user requests for content.",
+                "nullable": false,
+                "type": "bool"
+            }
+        ],
+        "http_version": [
+            {
+                "default": "http2",
+                "description": "Maximum HTTP version to support on the distribution.",
+                "nullable": true,
+                "type": "string"
+            }
+        ],
+        "is_ipv6_enabled": [
+            {
+                "description": "Whether the IPv6 is enabled for the distribution.",
+                "nullable": true,
+                "type": "bool"
+            }
+        ],
+        "logging_config": [
+            {
+                "description": "A list of logging configurations for the distribution.",
+                "nullable": true,
+                "type": "list(object({bucket:string,include_cookies:bool,prefix:string}))"
+            }
+        ],
+        "ordered_cache_behavior": [
+            {
+                "description": "A list of cache behaviors for the distribution.",
+                "nullable": true,
+                "type": "list(object({cache_policy_id:string, origin_request_policy_id:string, allowed_methods:list(string),cached_methods:list(string),compress:bool,default_ttl:number,field_level_encryption_id :string,max_ttl:number,min_ttl:number,path_pattern:string,smooth_streaming:bool,target_origin_id:string,trusted_signers:list(string),viewer_protocol_policy:string, lambda_function_association:list(object({event_type:string,lambda_arn:string,include_body:bool})),function_association:list(object({event_type:string,function_arn:string})),grpc_config:optional(list(object({enabled:bool})))}))"
+            }
+        ],
+        "origin": [
+            {
+                "description": "A list of origins for the distribution.",
+                "nullable": false,
+                "type": "list(object({domain_name:string, origin_id:string, origin_path:string, s3_origin_config:list(object({origin_access_identity :string})), connection_attempts:number, connection_timeout:number, origin_access_control_id:optional(string), origin_shield:list(object({enabled:bool, origin_shield_region:string})), custom_header:list(object({name:string, value:string})), custom_origin_config:optional(list(object({http_port:number,https_port:number,origin_keepalive_timeout:number,origin_protocol_policy:string,origin_read_timeout:number,origin_ssl_protocols:list(string)})))}))"
+            }
+        ],
+        "restrictions": [
+            {
+                "description": "The restriction settings for the distribution.",
+                "nullable": true,
+                "type": "list(object({geo_restriction :list(object({restriction_type:string,locations :list(string)}))}))"
+            }
+        ],
+        "viewer_certificate": [
+            {
+                "description": "The SSL configuration for this distribution (maximum one).",
+                "nullable": false,
+                "type": "list(object({cloudfront_default_certificate:bool,minimum_protocol_version:string, ssl_support_method:string, acm_certificate_arn:string, iam_certificate_id:string }))"
+            }
+        ],
+        "web_acl_id": [
+            {
+                "description": "Unique identifier that specifies the AWS WAF web ACL, if any, to associate with this distribution.",
+                "nullable": true,
+                "type": "string"
+            }
+        ],
+        "tags": [
+            {
+                "type": "map(string)",
+                "description": "A map of tags to assign to the resource.",
+                "nullable": true
+            }
+        ],
+        "staging": [
+            {
+                "description": "Whether to create a staging distribution.",
+                "nullable": true,
+                "type": "bool",
+                "default": false
+            }
+        ],
+        "price_class": [
+            {
+                "description": "The price class for this distribution.",
+                "nullable": true,
+                "type": "string",
+                "default": null
+            }
+        ]
+    }
+}

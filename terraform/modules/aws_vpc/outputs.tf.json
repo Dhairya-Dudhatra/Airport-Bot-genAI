@@ -1,0 +1,24 @@
+{
+  "output": {
+    "arn": {
+      "description": "The value of the arn output",
+      "sensitive": false,
+      "value": "${aws_vpc.this.arn}"
+    },
+    "default_route_table_id": {
+      "description": "The value of the default_route_table_id output",
+      "sensitive": false,
+      "value": "${aws_vpc.this.default_route_table_id}"
+    },
+    "id": {
+      "description": "The value of the id output",
+      "sensitive": false,
+      "value": "${aws_vpc.this.id}"
+    },
+    "vpc_id": {
+      "description": "The value of the vpc_id output",
+      "sensitive": false,
+      "value": "${aws_vpc.this.id}"
+    }
+  }
+}

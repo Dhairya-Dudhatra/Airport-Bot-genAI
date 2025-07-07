@@ -1,0 +1,32 @@
+{
+    "variable": {
+        "policy": [
+            {
+                "type": "string",
+                "description": "The policy document. This is a JSON formatted string.",
+                "nullable": false
+            }
+        ],
+        "name": [
+            {
+                "type": "string",
+                "description": "The name of the policy. If omitted, Terraform will assign a random, unique name.",
+                "nullable": true
+            }
+        ],
+        "name_prefix": [
+            {
+                "type": "string",
+                "description": "Creates a unique name beginning with the specified prefix. Conflicts with `name`.",
+                "nullable": true
+            }
+        ],
+        "user": [
+            {
+                "type": "string",
+                "description": "IAM user to which to attach this policy.",
+                "nullable": false
+            }
+        ]
+    }
+}

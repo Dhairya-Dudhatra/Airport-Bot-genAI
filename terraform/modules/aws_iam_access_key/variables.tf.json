@@ -1,0 +1,25 @@
+{
+    "variable": {
+        "user": [
+            {
+                "type": "string",
+                "description": "The IAM user to associate the access key with.",
+                "nullable": false
+            }
+        ],
+        "pgp_key": [
+            {
+                "type": "string",
+                "description": " Either a base-64 encoded PGP public key, or a keybase username in the form keybase:some_person_that_exists",
+                "nullable": true
+            }
+        ],
+        "status": [
+            {
+                "type": "string",
+                "description": "The status of the access key.",
+                "nullable": true
+            }
+        ]
+    }
+}

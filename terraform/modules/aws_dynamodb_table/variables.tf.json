@@ -1,0 +1,135 @@
+{
+    "variable": {
+        "attribute": [
+            {
+                "default": [
+                    {
+                        "name": "id",
+                        "type": "S"
+                    }
+                ],
+                "description": "The attribute of the DynamoDB table",
+                "type": "list(object({ name: string, type: string }))",
+                "nullable": false
+            }
+        ],
+        "billing_mode": [
+            {
+                "default": "PROVISIONED",
+                "description": "The billing mode of the DynamoDB table",
+                "type": "string",
+                "nullable": true
+            }
+        ],
+        "global_secondary_index": [
+            {
+                "default": [],
+                "description": "A list of maps representing the global secondary indexes",
+                "type": "list(object({ name: string, hash_key: string, range_key: string, projection_type: string, read_capacity: number, write_capacity: number }))",
+                "nullable": true
+            }
+        ],
+        "hash_key": [
+            {
+                "default": "id",
+                "description": "The hash key of the DynamoDB table",
+                "type": "string",
+                "nullable": false
+            }
+        ],
+        "local_secondary_index": [
+            {
+                "default": [],
+                "description": "A list of maps representing the local secondary indexes",
+                "type": "list(object({ name: string, range_key : string, projection_type: string}))",
+                "nullable": true
+            }
+        ],
+        "point_in_time_recovery": [
+           {
+            "default": [],
+            "description": "Point-in-time recovery options",
+            "type": "list(object({ enabled: bool }))",
+            "nullable": true
+           }
+        ],
+        "range_key": [
+            {
+                "default": "",
+                "description": "The range key of the DynamoDB table",
+                "nullable": true,
+                "type": "string"
+            }
+        ],
+        "server_side_encryption": [
+            {
+                "default": [],
+                "description": "Encryption at rest options. AWS DynamoDB tables are automatically encrypted at rest with an AWS-owned Customer Master Key if this argument isn't specified.",
+                "type": "list(object({ enabled: bool, kms_key_arn: string }))",
+                "nullable": true
+            }
+        ],
+        "stream_enabled": [
+            {
+                "description": "Indicates whether Streams is to be enabled (true) or disabled (false)",
+                "type": "bool",
+                "nullable": true
+            }
+        ],
+        "stream_view_type": [
+            {
+                "description": "Indicates the DynamoDB Streams settings for the table",
+                "type": "string",
+                "default": "NEW_IMAGE",
+                "nullable": true
+            }
+        ],
+        "name": [
+            {
+                "description": "The name of the DynamoDB table",
+                "type": "string",
+                "default": "my-table",
+                "nullable": false
+            }
+        ],
+        "tags": [
+            {
+                "default": {},
+                "description": "A map of tags to apply to the resources",
+                "type": "map(string)",
+                "nullable": true
+            }
+        ],
+        "ttl": [
+            {
+                "default": [],
+                "description": "A map representing the TTL settings",
+                "type": "list(object({ attribute_name: string, enabled: bool }))",
+                "nullable": true
+            }
+        ],
+        "write_capacity": [
+            {
+                "default": 1,
+                "description": "Number of write units for this table. If the billing_mode is PROVISIONED, this field is required.",
+                "type": "number",
+                "nullable": true
+            }
+        ],
+        "read_capacity": [
+            {
+                "default": 1,
+                "description": "Number of read units for this table. If the billing_mode is PROVISIONED, this field is required.",
+                "type": "number",
+                "nullable": true
+            }
+        ],
+        "timeouts": [
+            {
+                "type": "object({create: optional(string), update: optional(string), delete: optional(string)})",
+                "description": "The timeouts for create, update and delete operations",
+                "nullable": true
+            }
+        ]
+    }
+}

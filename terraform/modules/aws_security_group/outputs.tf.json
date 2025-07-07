@@ -1,0 +1,14 @@
+{
+  "output": {
+    "arn": {
+      "description": "The arn of the security group",
+      "sensitive": false,
+      "value": "${aws_security_group.this.arn}"
+    },
+    "id": {
+      "description": "The value of the security_group_id output",
+      "sensitive": false,
+      "value": "${aws_security_group.this.id}"
+    }
+  }
+}

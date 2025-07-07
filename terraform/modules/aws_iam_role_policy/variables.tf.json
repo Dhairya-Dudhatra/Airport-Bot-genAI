@@ -1,0 +1,33 @@
+{
+    "variable": {
+        "name": [
+            {
+                "description": "Name of the Role Policy",
+                "type": "string",
+                "nullable": true
+            }
+        ],
+        "policy": [
+            {
+                "description": "JSON formatted inline policy document",
+                "type": "string",
+                "nullable": false
+            }
+        ],
+        "role": [
+            {
+                "description": "The name of the IAM role to attach to the policy",
+                "type": "string",
+                "nullable": false
+            }
+        ],
+        "role_type":[
+            {
+                "description": "The type of the IAM role to attach to the policy",
+                "default": "custom",
+                "type": "string",
+                "nullable": true
+            }
+        ]
+    }
+}

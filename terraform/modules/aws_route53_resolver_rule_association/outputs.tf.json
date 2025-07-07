@@ -1,0 +1,9 @@
+{
+  "output": {
+    "id": {
+      "description": "The ID of the Route 53 Resolver rule association.",
+      "sensitive": false,
+      "value": "${aws_route53_resolver_rule_association.this.id}"
+    }
+  }
+}

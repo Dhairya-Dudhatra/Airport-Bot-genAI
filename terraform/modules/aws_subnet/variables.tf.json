@@ -1,0 +1,41 @@
+{
+    "variable": {
+        "vpc_id": [
+            {
+                "description": "The VPC ID",
+                "type": "string",
+                "nullable": false
+            }
+        ],
+        "cidr_block": [
+            {
+                "description": "The CIDR block for the subnet",
+                "type": "string",
+                "nullable": true
+            }
+        ],
+        "availability_zone": [
+            {
+                "description": "The availability zone",
+                "type": "string",
+                "nullable": true
+            }
+        ],
+        "tags": [
+            {
+                "description": "The tags to apply to the subnet",
+                "type": "map(string)",
+                "nullable": true,
+                "default": {}
+            }
+        ],
+        "map_public_ip_on_launch":[
+            {
+                "description": "Specify true to indicate that instances launched into the subnet should be assigned a public IP address.",
+                "type": "bool",
+                "nullable": true,
+                "default": false
+            }
+        ]
+    }
+}

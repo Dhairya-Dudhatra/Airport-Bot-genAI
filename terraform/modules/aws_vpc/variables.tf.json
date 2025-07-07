@@ -1,0 +1,47 @@
+{
+  "variable": {
+    "cidr_block": [
+      {
+        "description": "The IPv4 CIDR block for the VPC.",
+        "nullable": false,
+        "type": "string"
+      }
+    ],
+    "instance_tenancy": [
+      {
+        "description": "The IPv4 CIDR block for the VPC.",
+        "default": "default",
+        "type": "string"
+      }
+    ],
+    "enable_dns_support": [
+      {
+        "description": "A boolean flag to enable/disable DNS support in the VPC.",
+        "default": true,
+        "type": "bool"
+      }
+    ],
+    "enable_network_address_usage_metrics": [
+      {
+        "description": "Indicates whether Network Address Usage metrics are enabled for your VPC.",
+        "default": false,
+        "type": "bool"
+      }
+    ],
+    "enable_dns_hostnames": [
+      {
+        "description": "A boolean flag to enable/disable DNS hostnames in the VPC.",
+        "default": false,
+        "type": "bool"
+      }
+    ],
+    "tags": [
+      {
+        "description": "The tags to apply to the subnet",
+        "type": "map(string)",
+        "nullable": true,
+        "default": {}
+      }
+    ]
+  }
+}

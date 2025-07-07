@@ -1,0 +1,19 @@
+{
+  "output": {
+    "arn": {
+      "description": "The value of the arn output",
+      "sensitive": false,
+      "value": "${aws_s3_bucket.this.arn}"
+    },
+    "bucket": {
+      "description": "The value of the bucket output",
+      "sensitive": false,
+      "value": "${aws_s3_bucket.this.bucket}"
+    },
+    "id": {
+      "description": "The value of the id output",
+      "sensitive": false,
+      "value": "${aws_s3_bucket.this.id}"
+    }
+  }
+}

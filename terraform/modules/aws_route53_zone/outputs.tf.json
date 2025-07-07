@@ -1,0 +1,14 @@
+{
+  "output": {
+    "arn": {
+      "description": "The ARN of the Hosted Zone.",
+      "sensitive": false,
+      "value": "${aws_route53_zone.this.arn}"
+    },
+    "zone_id": {
+      "description": "The Hosted Zone ID. This can be referenced by zone records.",
+      "sensitive": false,
+      "value": "${aws_route53_zone.this.zone_id}"
+    }
+  }
+}

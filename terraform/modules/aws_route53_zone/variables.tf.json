@@ -1,0 +1,46 @@
+{
+    "variable": {
+        "name": [
+            {
+                "type": "string",
+                "description": "The name of the hosted zone.",
+                "nullable": false
+            }
+        ],
+        "comment": [
+            {
+                "type": "string",
+                "description": "A comment for the hosted zone.",
+                "nullable": true
+            }
+        ],
+        "vpc": [
+            {
+                "type": "list(object({ vpc_id:string, vpc_region : string }))",
+                "description": "The VPC ID to associate with the private hosted zone.",
+                "nullable": true
+            }
+        ],
+        "force_destroy": [
+            {
+                "type": "bool",
+                "description": "Whether to destroy all records (possibly managed by other resources) in the zone when destroying the zone.",
+                "nullable": true
+            }
+        ],
+        "delegation_set_id": [
+            {
+                "type": "string",
+                "description": "The ID of the reusable delegation set whose NS records you want to assign to the hosted zone. Conflicts with vpc as delegation sets can only be used for public zones.",
+                "nullable": true
+            }
+        ],
+        "tags": [
+            {
+                "type": "map(string)",
+                "description": "A mapping of tags to assign to the resource.",
+                "nullable": true
+            }
+        ]
+    }
+}

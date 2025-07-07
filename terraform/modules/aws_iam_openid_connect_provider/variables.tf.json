@@ -1,0 +1,32 @@
+{
+    "variable": {
+        "url": [
+            {
+                "type": "string",
+                "description": "The URL of the OIDC identity provider that the cluster uses to obtain public keys for authenticating service accounts. This URL is of the form https://oidc.eks.REGION.amazonaws.com/id/CLUSTER_NAME.",
+                "nullable": false
+            }
+        ],
+        "client_id_list": [
+            {
+                "type": "list(string)",
+                "description": "List of client IDs for the OpenID Connect identity provider.",
+                "nullable": false
+            }
+        ],
+        "thumbprint_list": [
+            {
+                "type": "list(string)",
+                "description": "List of server certificate thumbprints for the OpenID Connect identity provider.",
+                "nullable": false
+            }
+        ],
+        "tags": [
+            {
+                "type": "map(string)",
+                "description": "Key-value map of resource tags.",
+                "nullable": true
+            }
+        ]
+    }
+}

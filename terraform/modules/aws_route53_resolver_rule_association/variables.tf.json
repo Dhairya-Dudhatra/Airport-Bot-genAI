@@ -1,0 +1,27 @@
+{
+    "variable": {
+        "resolver_rule_id": [
+            {
+                "type": "string",
+                "description": "The ID of the Route 53 Resolver rule that you want to associate with the VPC."
+            }
+        ],
+        "vpc_id": [
+            {
+                "type": "string",
+                "description": "The ID of the VPC that you want to associate the Route 53 Resolver rule with."
+            }
+        ],
+        "name": [
+            {
+                "type": "string",
+                "description": "The name of the Route 53 Resolver rule association.",
+                "nullable": true,
+                "validation": {
+                    "condition": "${length(var.name) <= 64}",
+                    "error_message": "`name` must be less than or equal to 64 characters."
+                }
+            }
+        ]
+    }
+}
