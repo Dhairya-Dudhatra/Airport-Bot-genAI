@@ -1,0 +1,69 @@
+{
+    "variable": {
+        "assume_role_policy": [
+            {
+                "description": "The policy that grants an entity permission to assume the role",
+                "type": "string",
+                "nullable": false
+            }
+        ],
+        "description": [
+            {
+                "description": "The description of the role",
+                "nullable": true,
+                "type": "string"
+            }
+        ],
+        "force_detach_policies": [
+            {
+                "default": true,
+                "description": "Specifies to force detaching any policies the role has before destroying it",
+                "type": "bool",
+                "nullable": true
+            }
+        ],
+        "inline_policy": [
+            {
+                "description": "The policy document",
+                "nullable": true,
+                "type": "list(object({ name: string, policy: string }))"
+            }
+        ],
+        "name": [
+            {
+                "description": "The name of the role",
+                "type": "string",
+                "nullable": true
+            }
+        ],
+        "tags": [
+            {
+                "description": "A mapping of tags to assign to the role",
+                "nullable": true,
+                "type": "map(string)"
+            }
+        ],
+        "path": [
+            {
+                "description": "The path to the role",
+                "type": "string",
+                "nullable": true
+            }
+        ],
+        "max_session_duration": [
+            {
+                "description": "The maximum session duration (in seconds) that you want to set for the specified role",
+                "type": "number",
+                "nullable": true
+            }
+        ],
+        "permissions_boundary": [
+            {
+                "description": "The ARN of the policy that is used to set the permissions boundary for the role",
+                "type": "string",
+                "nullable": true,
+                "default": null
+            }
+        ]
+    }
+}
