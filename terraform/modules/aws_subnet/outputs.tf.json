@@ -1,0 +1,14 @@
+{
+  "output": {
+    "arn": {
+      "description": "The value of the arn output",
+      "sensitive": false,
+      "value": "${aws_subnet.this.arn}"
+    },
+    "id": {
+      "description": "The value of the id output",
+      "sensitive": false,
+      "value": "${aws_subnet.this.id}"
+    }
+  }
+}
