@@ -1,0 +1,9 @@
+{
+  "output": {
+    "id": {
+      "description": "The ID of the Bigtable instance.",
+      "sensitive": false,
+      "value": "${google_bigtable_table.this.id}"
+    }
+  }
+}

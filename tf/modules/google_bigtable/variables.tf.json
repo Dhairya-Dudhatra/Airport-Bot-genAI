@@ -1,0 +1,99 @@
+{
+    "variable": {
+        "instance_name": [
+            {
+                "type": "string",
+                "description": "The name (also called Instance Id in the Cloud Console) of the Cloud Bigtable instance. Must be 6-33 characters and must only contain hyphens, lowercase letters and numbers.",
+                "nullable": false
+            }
+        ],
+        "cluster_id": [
+            {
+                "type": "string",
+                "description": "The ID of the Cloud Bigtable cluster. Must be 6-30 characters and must only contain hyphens, lowercase letters and numbers.",
+                "nullable": false
+            }
+        ],
+        "zone": [
+            {
+                "type": "string",
+                "description": "The zone to create the Cloud Bigtable cluster in. If it not specified, the provider zone is used. Each cluster must have a different zone in the same region.",
+                "nullable": true
+            }
+        ],
+        "num_nodes": [
+            {
+                "type": "number",
+                "description": "The number of nodes in the cluster. If no value is set, Cloud Bigtable automatically allocates nodes based on your data footprint and optimized for 50% storage utilization.",
+                "nullable": true
+            }
+        ],
+        "deletion_protection": [
+            {
+                "type": "string",
+                "description": "A field to make the cluster protected against data loss i.e. when set to PROTECTED, deleting the cluster and the instance containing the cluster would be prohibited. If not provided, deletion protection will be set to UNPROTECTED. default value is PROTECTED.",
+                "nullable": true,
+                "default": "PROTECTED"
+            }
+        ],
+        "storage_type": [
+            {
+                "type": "string",
+                "description": "The type of storage. Can be either SSD or HDD. The default value is SSD.",
+                "nullable": true,
+                "default": "SSD"
+            }
+        ],
+        "name": [
+            {
+                "type": "string",
+                "description": "The name of the table. Must be 1-50 characters and must only contain hyphens, underscores, periods, letters and numbers.",
+                "nullable": false
+            }
+        ],
+        "split_keys": [
+            {
+                "type": "list(string)",
+                "description": "A list of predefined keys to split the table on. !> Warning: Modifying the split_keys of an existing table will cause Terraform to delete/recreate the entire google_bigtable_table resource.",
+                "nullable": true
+            }
+        ],
+        "column_family": [
+            {
+                "type": "list(object({family: optional(string)}))",
+                "description": "A group of columns within a table which share a common configuration. This can be specified multiple times.",
+                "nullable": true
+            }
+        ],
+        "instance_deletion_protection": [
+            {
+                "type": "bool",
+                "description": " Whether Terraform will be prevented from destroying the instance. When the field is set to true or unset in Terraform state, a terraform apply or terraform destroy that would delete the instance will fail. When the field is set to false, deleting the instance is allowed. default value is TRUE.",
+                "nullable": true,
+                "default": true
+            }
+        ],
+        "change_stream_retention": [
+            {
+                "type": "string",
+                "description": "Duration to retain change stream data for the table. Set to 0 to disable. Must be between 1 and 7 days. Should be in the format HHMMSS. For ex- 24h0m0s, 50h3m0s",
+                "nullable": true
+            }
+        ],
+        "automated_backup_policy": [
+            {
+                "type": "string",
+                "description": "Automated backups configuration. If not provided, automated backups will be disabled.",
+                "nullable": true,
+                "default": "DISABLE"
+            }
+        ],
+        "iam_roles": [
+            {
+                "type": "list(object({role: string, member: string}))",
+                "description": "Defines a binding to be included for this resource.",
+                "nullable": true
+            }
+        ]
+    }
+}
