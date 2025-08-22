@@ -1,0 +1,14 @@
+{
+  "output": {
+    "apigateway_id": {
+      "description": "The value of the apigateway_id output",
+      "sensitive": false,
+      "value": "${aws_apigatewayv2_api.this.id}"
+    },
+    "arn": {
+      "description": "The value of the arn output",
+      "sensitive": false,
+      "value": "${aws_apigatewayv2_api.this.arn}"
+    }
+  }
+}

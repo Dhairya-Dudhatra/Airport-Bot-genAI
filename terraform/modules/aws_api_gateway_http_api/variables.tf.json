@@ -1,0 +1,26 @@
+{
+  "variable": {
+    "name": [
+      {
+        "description": "The name of the API",
+        "nullable": false,
+        "type": "string"
+      }
+    ],
+    "stage_name": [
+      {
+        "default": "dev",
+        "description": "The name of the stage",
+        "nullable": false,
+        "type": "string"
+      }
+    ],
+    "tags": [
+      {
+          "description": "A map of tags to add to all resources",
+          "type": "map(string)",
+          "nullable": true
+      }
+    ]
+  }
+}
